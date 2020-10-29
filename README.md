@@ -3,16 +3,16 @@ This is a pre-request script for use with Postman and the Netsapiens platform
 
 The following requires the use of Postman from https://www.postman.com/ and your Netsapiens instance
 
-##Instructions
+## Instructions
 Under your Netsapiens collection, right click and then Edit
 
-##Under Authorization
+## Under Authorization
 Set Type: OAuth 2.0
 Add auth data to: Request Headers
 Access Token: {{accessToken}}
 Header Prefix: Bearer
 
-##Pre-request Scripts
+## Pre-request Scripts
 ```javascript
 let fqdn = pm.variables.get('fqdn');
 let clientid = pm.variables.get('clientid');
@@ -46,7 +46,7 @@ pm.sendRequest(getTokenRequest, (err, response) => {
     pm.variables.set('accessToken', newAccessToken);
     pm.environment.set('access_token', newAccessToken);
 });```
-##Variables
+## Variables
 Add the following variables
 
 fqdn = The FQDN of your portal server
